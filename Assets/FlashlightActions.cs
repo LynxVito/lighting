@@ -15,9 +15,17 @@ public class FlashlightActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown (KeyCode.Space)) {
-            Light light = GetComponent<Light> ();
-            light.intensity = 0;
+        Light light = GetComponent<Light> ();
+        
+        if (light.intensity == 0) {
+            if (Input.GetKeyDown (KeyCode.F)) {
+                light.intensity = 4;
+            }
+        }
+        else {
+            if (Input.GetKeyDown (KeyCode.F)) {
+                light.intensity = 0;
+            }
         }
     }
 }
